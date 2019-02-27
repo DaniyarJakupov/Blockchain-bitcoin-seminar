@@ -130,7 +130,7 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+\usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -523,7 +523,6 @@ As a result of this discussions, many of its members proposed various solutions 
 So let us examine some proposals published by members of Cypherpunk mailing list.
 
 \subsubsection{Early attempts}
-
 We start in 1997 with Dr. Adam Back who developed a system for preventing digital spamming called Hashcash. 
 He was one of the first to use Proof-of-Work (PoW) algorithm in real application by forcing users to spend computational power on a creation of a hash that is included in email header. 
 This hash is easily verifiable, but impossible to hack using brute-force. 
@@ -545,21 +544,56 @@ Here we examined just some attempts to develop fully functional digital currency
 There were many more, but for one reason or another, none of them were successful. 
 At least, not until year 2008. 
 
-\subsubsection{Problems of digital and how Bitcoin solved them}
+\subsubsection{Pros and cons of digital currency}
 What makes digital currency creation so hard? There are two main problems that need to be solved. 
 First one is how to ensure that money spend belongs to a certain user without revealing how to access them. 
 Second problem is a possibility to spend one digital token multiple times by copying it to a point where counterfeits are indistinguishable and using network latency during the sending process. 
 Because of that, creation of fully independent and distributed digital currency was not done for a long time. 
-However, after financial crisis in 2008 which caused millions of people around the world to loose their homes and jobs and additionally tanking major global economies such as USA and EU, interest in alternative ways of doing financial operations outside of traditional banking system was rekindled. 
 
+However, after financial crisis in 2008 which caused millions of people around the world to loose their homes and jobs and additionally tanking major global economies such as USA and EU [5].
+As a consequence, interest in alternative ways of doing financial operations outside of traditional banking system was rekindled. 
+In addition, people already knew what kind of advantages digital currency could bring. Here are some examples:
+\begin{enumerate}
+  \item Easy accounting and access. 
+  \item International. 
+  \item Cheap. 
+  \item Internet ready
+\end{enumerate}
+
+\subsection{Blockchain: blueprint for Bitcoin}
 Coincidentally, in October of 2008 someone releases a paper addressing this issue. 
-The paper was distributed through Cypherpunks mailing list and is called "Bitcoin: A Peer-to-Peer Electronic Cash System" [5]. 
+The paper was distributed through Cypherpunks mailing list and is called "Bitcoin: A Peer-to-Peer Electronic Cash System" [6]. 
 It describes a solution to two problems of digital currencies and allowing to send electronic transactions without relying on trust provided from a third party. 
 We do not know who is the author behind this paper. 
 Whether it is one person or a group of individuals, we only know the pseudonym which is Satoshi Nakamoto.    
 
+In order to create functional digital currency, Satoshi Nakamoto used technologies that have been developed in a past. 
+He started with technology that proved to be working without relying on centralized authority.    
+BitTorrent - protocol for decentralized distribution of files was responsible for approximately half of all internet traffic in 2008 [7]. 
+Satoshi applied BitTorrent principle to a bank, by taking its centralized part, namely ledger and distributing it across the network. 
+To make such distributed ledger work, he applied two technologies: PoW algorithm and elliptic curve digital signature (ECDS) algorithm.
+Former solves double-spending problem as we have already seen in previous works whereas latter ensures that funds can be spent only by their rightful owner.
+By combining these algorithms together, one can build a decentralized network of trustless verification also known as blockchain. 
 
+\subsection{Bitcoin: under the hood}
+There is no single definition for Bitcoin.
+But we can characterize it as a digital ledger that lists financial transactions and distributed across blockchain network. 
+From original white paper we know how this network organized: 
 
+\begin{enumerate}
+  \item Transactions are grouped together into blocks 
+  \item Maximum number of transactions per block is ~2600. 
+  \item New block is generated every ~10 minutes.
+\end{enumerate}
+
+How blocks look like can be seen on Figure 1.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.45\textwidth]{graphics/blockchain.png}
+  \caption{Bitcoin blocks with transactions}
+  \label{fig:fig1}
+\end{figure}
 
 
 
