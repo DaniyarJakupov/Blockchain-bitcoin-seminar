@@ -514,21 +514,52 @@ In this paper, we discuss various topics related to blockchain technology and bi
 \section{Main Part}
 
 \subsection{History of digital currencies}
-Ever since internet starts to gain its popularity among the masses, people were thinking on how to adapt traditional financial system to digital world. One of the pioneers in this area were three enthusiasts, namely Eric Hughes, mathematician from University of California, Berkeley; Tim May, senior scientist at Intel and John Gilmore a computer scientist from Sun Microsystems. In 1992 they organized a group called Cypherpunks in Bay Area with the goal of adapting traditional monetary system to digital society where privacy will be guaranteed with the help of programming and cryptography. This underlying principle is highlighted in their manifesto [1]. Quickly, this group became popular and people were joining it all across the globe through its encrypted and anonymous mailing list, which was one of the first in a world. As a result of this discussions, many of its members proposed various solutions for creation of digital currency which later would become foundations for the development of Bitcoin. So let us examine some proposals published by members of Cypherpunk mailing list.
+Ever since internet starts to gain its popularity among the masses, people were thinking on how to adapt traditional financial system to digital world. 
+One of the pioneers in this area were three enthusiasts, namely Eric Hughes, mathematician from University of California, Berkeley; Tim May, senior scientist at Intel and John Gilmore a computer scientist from Sun Microsystems. 
+In 1992 they organized a group called Cypherpunks in Bay Area with the goal of adapting traditional monetary system to digital society where privacy will be guaranteed with the help of programming and cryptography. 
+This underlying principle is highlighted in their manifesto [1].
+Quickly, this group became popular and people were joining it all across the globe through its encrypted and anonymous mailing list, which was one of the first in a world. 
+As a result of this discussions, many of its members proposed various solutions for creation of digital currency which later would become foundations for the development of Bitcoin. 
+So let us examine some proposals published by members of Cypherpunk mailing list.
 
 \subsubsection{Early attempts}
-We start in 1997 with Dr. Adam Back who developed a system for preventing digital spamming called Hashcash. He was one of the first to use Proof-of-Work (PoW) algorithm in real application by forcing users to spend computational power on a creation of a hash that is included in email header. This hash is easily verifiable, but impossible to hack using brute-force. This serves as a proof that certain amount of time was spend to create an email, thus making spamming inefficient [2]. Later, we examine how this algorithm is used in Bitcoin. 
+
+We start in 1997 with Dr. Adam Back who developed a system for preventing digital spamming called Hashcash. 
+He was one of the first to use Proof-of-Work (PoW) algorithm in real application by forcing users to spend computational power on a creation of a hash that is included in email header. 
+This hash is easily verifiable, but impossible to hack using brute-force. 
+This serves as a proof that certain amount of time was spend to create an email, thus making spamming inefficient [2]. 
+Later, we examine how this algorithm is used in Bitcoin. 
 
 One year later, Wei Dai, a computer engineer, published a proposal for "b-money, an anonymous, distributed electronic cash system" [3]. He developed two protocols that could be used in such cash system. First protocol requires every user of the network to keep separate database of all transactions. Money creation happens by solving computational problems and money transfer occurs by broadcasting transaction details to all participants. You may notice that this protocol is using PoW concept. Second protocol has a different approach to transaction storage. Instead of using every member of network to keep database, only subset of participants is responsible for verification of transactions. To ensure that such users will be honest, they are required to deposit their own funds in special account in case of a fraudulent behavior. This protocol later will be known as Proof-of-Stake (PoS). Nowadays, many cryptocurrencies are using this method. 
 
-In 2004, Hal Finney, a computer scientist, creates so called Reusable Proof of Work (RPOW) tokens that can be used in a form of digital cash [4]. The system consist of three parts: client, host, and server. Each has its own responsibilities. The interesting part of this software is that tokens are completely unique, but also have limited re-usability quality, thus preventing double spending, which is one of the fundamental problems of digital cash. 
+In 2004, Hal Finney, a computer scientist, creates so called Reusable Proof of Work (RPOW) tokens that can be used in a form of digital cash [4]. 
+The system consist of three parts: client, host, and server. Each has its own responsibilities. 
+The interesting part of this software is that tokens are completely unique, but also have limited re-usability quality, thus preventing double spending, which is one of the fundamental problems of digital cash. 
 
-In 2005, Nick Szabo, computer scientist and cryptographer, republishes his proposal from 1998 called Bitgold. There he describes a system that works as decentralized digital currency, similar to RPOW system by Hal Finney. The difference is that PoW in RPOW relies upon specific computer architecture, which can be leveraged at some point in time, whereas Bitgold uses additional timestamps by implementing linked structure for transactions, thus making it possible to proof mathematical difficulty of the work at any moment in history. Unfortunately, Bitgold was only implemented on paper.
+In 2005, Nick Szabo, computer scientist and cryptographer, republishes his proposal from 1998 called Bitgold. 
+There he describes a system that works as decentralized digital currency, similar to RPOW system by Hal Finney. 
+The difference is that PoW in RPOW relies upon specific computer architecture, which can be leveraged at some point in time, whereas Bitgold uses additional timestamps by implementing linked structure for transactions, thus making it possible to proof mathematical difficulty of the work at any moment in history. 
+Unfortunately, Bitgold was only implemented on paper.
 
-Here we examined just some attempts to develop fully functional digital currency. There were many more, but for one reason or another, none of them were successful. At least, not until year 2008. 
+Here we examined just some attempts to develop fully functional digital currency. 
+There were many more, but for one reason or another, none of them were successful. 
+At least, not until year 2008. 
 
 \subsubsection{Problems of digital and how Bitcoin solved them}
-What makes digital currency creation so hard?  
+What makes digital currency creation so hard? There are two main problems that need to be solved. 
+First one is how to ensure that money spend belongs to a certain user without revealing how to access them. 
+Second problem is a possibility to spend one digital token multiple times by copying it to a point where counterfeits are indistinguishable and using network latency during the sending process. 
+Because of that, creation of fully independent and distributed digital currency was not done for a long time. 
+However, after financial crisis in 2008 which caused millions of people around the world to loose their homes and jobs and additionally tanking major global economies such as USA and EU, interest in alternative ways of doing financial operations outside of traditional banking system was rekindled. 
+
+Coincidentally, in October of 2008 someone releases a paper addressing this issue. 
+The paper was distributed through Cypherpunks mailing list and is called "Bitcoin: A Peer-to-Peer Electronic Cash System" [5]. 
+It describes a solution to two problems of digital currencies and allowing to send electronic transactions without relying on trust provided from a third party. 
+We do not know who is the author behind this paper. 
+Whether it is one person or a group of individuals, we only know the pseudonym which is Satoshi Nakamoto.    
+
+
+
 
 
 
