@@ -523,10 +523,10 @@ As a result of this discussions, many of its members proposed various solutions 
 So let us examine some proposals published by members of Cypherpunk mailing list.
 
 \subsubsection{Early attempts}
-We start in 1997 with Dr. Adam Back who developed a system for preventing digital spamming called Hashcash. 
+We start in 1997 with Dr. Adam Back who developed a system for preventing digital spamming called Hashcash [2]. 
 He was one of the first to use Proof-of-Work (PoW) algorithm in real application by forcing users to spend computational power on a creation of a hash that is included in email header. 
 This hash is easily verifiable, but impossible to hack using brute-force. 
-This serves as a proof that certain amount of time was spend to create an email, thus making spamming inefficient [2]. 
+This serves as a proof that certain amount of time was spend to create an email, thus making spamming inefficient. 
 Later, we examine how this algorithm is used in Bitcoin. 
 
 One year later, Wei Dai, a computer engineer, published a proposal for "b-money, an anonymous, distributed electronic cash system" [3]. He developed two protocols that could be used in such cash system. First protocol requires every user of the network to keep separate database of all transactions. Money creation happens by solving computational problems and money transfer occurs by broadcasting transaction details to all participants. You may notice that this protocol is using PoW concept. Second protocol has a different approach to transaction storage. Instead of using every member of network to keep database, only subset of participants is responsible for verification of transactions. To ensure that such users will be honest, they are required to deposit their own funds in special account in case of a fraudulent behavior. This protocol later will be known as Proof-of-Stake (PoS). Nowadays, many cryptocurrencies are using this method. 
@@ -597,7 +597,7 @@ As it can be seen on Figure 1 each block is linked to previous block by using it
 
 \subsubsection{Elliptic Curve Digital Signature}
 ECDS cryptographical algorithm is used by Bitcoin in two cases. 
-First one is a creation of a wallet where user can keep track of a funds. 
+First one is a creation of a wallet where user can access his/her funds.
 In order to create and later access wallet, ECSD generates a private key, which is a number in base58 format. This number represent really large integer, to be more precise it is $2^{256}$ or $10^{168}$. 
 For a comparison, according to [8] just to count up to $2^{192}$ we will need constantly harvest energy directly from the sun for thirty two years. 
 All this implies, that a brute-force attack to find someone's else private key is simply impossible. 
@@ -616,6 +616,50 @@ The process of using private / public key pair for signing transactions is shown
   \caption{Signature generation using private / public key pair}
   \label{fig:fig2}
 \end{figure}
+
+\subsubsection{Proof Of Work}
+Now we can examine how Satoshi Nakamato solved another big problem of digital currencies - double spending.
+As we discussed, systems with PoW already have been developed, such as Adam Back's Hashcash [2]. 
+The key is to design a system that ensures the right order of transactions. 
+We know that transactions are grouped together into blocks and each block has a reference to previous one in a form of its hash. 
+But how are blocks generated and what if two blocks arrive at the same time? 
+
+On Figure 1 you might notice special field inside each block called nonce. 
+In order to create valid block that could be accepted into Bitcoin network, one must use cryptographic hash function SHA256. 
+As an arguments, it accepts hashed block and a random number called nonce.
+Result of SHA256 is another 32 bit number. 
+It should satisfy current bitcoin target by having certain number of leading zeros. 
+The only way to find such nonce for a specific block is by guessing and checking. 
+The first node that finds correct nonce broadcasts the block to the network. 
+
+The whole process of guessing the right nonce is called mining and nonce itself serves as a PoW. 
+This ensures that blocks are stored in order of their creation.
+It could take quite some time to find a nonce for a single node, but since the number of nodes participating in a mining quite large average time is around ten minutes. 
+To keep it like that, the target is adjusted every two weeks.
+
+Sometimes it can happen, that two nodes solve nonce puzzle at around same time. 
+In that case, bitcoin has a protocol that resolves the conflict by creating two branches of a blockchain until one of them becomes longer.
+Shorter branch is eliminated and transactions which were grouped in a discarded block will be returned to the pool of unconfirmed transactions.
+Thus, it is suggested to wait several blocks to be certain that transaction is recorded in a network.
+
+Attentive reader may notice that above mentioned conflict resolution could be exploited in different double spending attack. 
+Here is an example: Alice sends transaction to Bob. 
+Bob waits few more blocks to make sure transaction is not dismissed, then ships the product.
+Meanwhile, Alice was creating her own version of blockchain, where she send Bob's transaction to herself. 
+If Alice manages to be faster in mining new blocks, she can create a longer version of blockchain and announce it to the network, thus uncofirming previous blocks.
+
+But can she realistically do such thing? 
+Answer is no.
+The reason is that she will be trying to outpace the whole network of nodes and as we mentioned the network is creating a new block every ten minutes whereas for individual miner it takes approximately a day. 
+It can be compared to a lottery. 
+The chances of winning constantly by buying one ticket are close to zero. 
+The only way to do it is to have 51\% computational power of the whole network.
+This method is called 51\% attack. 
+But the only incentive of actually launching such attack is to completely destroy the value of Bitcoin. 
+
+In addition, Alice also cannot just swap one particular block that is already part of a blockchain due to the fact that next block has a reference to it in a form of hash. 
+Thus even if one transaction is altered, the whole reference hash becomes invalid and we go back to racing issue.
+
 
 
 
