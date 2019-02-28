@@ -331,7 +331,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Blockchain and Bitcoin}
+\title{Blockchains and Bitcoins}
 
 
 % author names and affiliations
@@ -340,7 +340,6 @@
 \author{\IEEEauthorblockN{Daniyar Jakupov}
 \IEEEauthorblockA{INFOTECH\\
 3212507\\
-University of Stuttgart\\
 Email: drjakupov@gmail.com}
 }
 
@@ -407,7 +406,7 @@ Bitcoin emerged as an alternative to traditional fiat currencies in 2008 and gai
 
 \section{Introduction}
 % no \IEEEPARstart
-In this paper, we discuss various topics related to blockchain technology and bitcoin itself. Firstly, we start with the history of digital currencies and why bitcoin was the first one to succeed. It leads us to principles of blockchain technology and why it was used for bitcoin. Then we look under the hood and learn how bitcoin works in real world. Finally, we examine different areas where blockchain is used on its own without bitcoin. We conclude by summarizing what we learned and what could be the future of these technologies.
+In this paper, various topics related to blockchain and Bitcoin technologies are examined. At first, we discuss history of digital currencies and why Bitcoin was the first one to succeed. It leads to principles of blockchain technology and how it is used in Bitcoin network. Then we look under the hood and learn how Bitcoin works in real world. Finally, we examine different areas where blockchain is used on its own. We conclude by summarizing what we learned and what could be the future of these technologies.
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
@@ -510,18 +509,17 @@ In this paper, we discuss various topics related to blockchain technology and bi
 \section{Main Part}
 
 \subsection{History of digital currencies}
-Ever since internet starts to gain its popularity among the masses, people were thinking on how to adapt traditional financial system to digital world. 
+Ever since internet started to gain its popularity, people were thinking on how to adapt traditional financial system to digital world. 
 One of the pioneers in this area were three enthusiasts, namely mathematician Eric Hughes, senior scientist Tim May and computer scientist John Gilmore.
 In 1992 they organized a group called Cypherpunks in Bay Area with the goal of adapting traditional monetary system to digital society where privacy will be guaranteed with the help of programming and cryptography. 
-This underlying principle is highlighted in their manifesto \cite{manifesto}.
-Quickly, this group became popular and people were joining it all across the globe through its encrypted and anonymous mailing list, which was one of the first in a world. 
-As a result of this discussions, many of its members proposed various solutions for creation of digital currency which later would become foundations for the development of Bitcoin. 
-So let us examine some proposals published by members of Cypherpunk mailing list.
+This fundamental principle is highlighted in their manifesto \cite{manifesto}.
+Quickly, this group became popular and people were joining it all across the globe through its encrypted and anonymous mailing list.
+As a direct result of discussions, many of its members proposed various solutions for creation of digital currency which later would lay a foundation for the development of Bitcoin. 
+Let us examine some proposals published by members of Cypherpunk mailing list at different points in time.
 
-\subsubsection{Early attempts}
 We start in 1997 with Dr. Adam Back who developed a system for preventing digital spamming called Hashcash \cite{hashcash}. 
-He was one of the first to use Proof-of-Work (PoW) algorithm in real application by forcing users to spend computational power on a creation of a hash that is included in email header. 
-This hash is easily verifiable, but impossible to hack using brute-force. 
+He was one of the first to use Proof-of-Work (PoW) algorithm in real application by forcing users to spend computational power on a creation of a hash that is included in email header.  
+The difficulty of hash creation can be programmed manually, but verification process takes almost no time.
 This serves as a proof that certain amount of time was spend to create an email, thus making spamming inefficient. 
 Later, we examine how this algorithm is used in Bitcoin. 
 
@@ -540,27 +538,34 @@ Here we examined just some attempts to develop fully functional digital currency
 There were many more, but for one reason or another, none of them were successful. 
 At least, not until year 2008. 
 
-\subsubsection{Problems of digital currency}
-What makes digital currency creation so hard? There are two main problems that need to be solved. 
+What made digital currency creation so hard? There are two main problems that has to be solved. 
+
 First one is how to ensure that money spend belongs to a certain user without revealing how to access them. 
 Second problem is a possibility to spend one digital token multiple times by copying it to a point where counterfeits are indistinguishable and using network latency during the sending process. 
-Because of that, creation of fully independent and distributed digital currency was not done for a long time. 
+Because of that, creation of fully independent and distributed digital currency was not done for more than a decade. 
 
-However, major push towards digital currencies happened after financial crisis in 2008 which caused recession for major global economies such as USA and EU.
+However, major push towards digital currencies happened after financial crisis in 2008 which caused recession for major global economies, such as USA and EU.
 As a consequence, interest in alternative ways of doing financial operations outside of traditional banking system was rekindled. 
+On top of that, theoretically digital currency has a number of benefits, here are just some of them:
+\begin{itemize}
+  \item Internet ready from the start;
+  \item Fast to transfer;
+  \item Cheap to maintain;
+  \item Simple to access;
+\end{itemize}
 
 
-\subsection{Bitcoin Whitepaper}
+\subsection{Bitcoin White Paper}
 Coincidentally, in October of 2008 someone releases a paper addressing this issue. 
-The paper was distributed through Cypherpunks mailing list with the title "Bitcoin: A Peer-to-Peer Electronic Cash System" \cite{whitepaper}. 
-It describes a solution to two problems of digital currencies, thus allowing to send electronic transactions without relying on trust from third party. 
+The paper was distributed via Cypherpunks mailing list with the title "Bitcoin: A Peer-to-Peer Electronic Cash System" \cite{whitepaper}. 
+It describes a solution to two problems of digital currencies, thus allowing to send electronic transactions without relying on a trust from third parties. 
 It is unknown who is the author behind this paper. 
 Whether it is one person or a group of individuals, only pseudonym is present which is Satoshi Nakamoto. Hence, we will address the author as a male.
 
 In order to create functional digital currency, Satoshi Nakamoto used technologies that have been developed in a past. 
-He started with technology that proved to be working without relying on centralized authority.    
+He started with piece of software that proved to be working without relying on centralized authority.    
 BitTorrent - protocol for decentralized distribution of files was responsible for approximately half of all internet traffic in 2008 \cite{p2p}. 
-Satoshi applied BitTorrent principle to a bank by taking its centralized part, namely the ledger and distributing it across the network. 
+Satoshi applied BitTorrent principle to a bank by taking its centralized part, namely the ledger, and distributing it across the network. 
 To make such distributed ledger work, he applied two technologies: PoW algorithm and Elliptic Curve Digital Signature (ECDS) algorithm.
 Former solves double-spending problem as we have already seen in previous works, whereas latter ensures that funds can be spent only by their rightful owner.
 By combining these algorithms together, one can build a decentralized network of trustless verification also known as blockchain. 
@@ -573,7 +578,7 @@ From original white paper \cite{whitepaper} we know how this network organized:
 \begin{itemize}
   \item Transactions are grouped together into blocks; 
   \item Each block can store no more than 1 MB, which is roughly 2600 transactions per block;
-  \item New block is generated approximately every ten minutes;
+  \item New block is generated approximately every ten minutes.
 \end{itemize}
 
 As it can be seen on Figure \ref{fig:fig1} each block is linked to previous block by using its hashed header. 
@@ -611,7 +616,7 @@ The process of using private / public key pair for signing transactions is shown
 \end{figure}
 
 \subsubsection{Solution to double spending: Proof of Work}
-Now we can examine how Satoshi Nakamato solved another big problem of digital currencies - double spending.
+Now we can examine how Satoshi Nakamoto solved another big problem of digital currencies - double spending.
 As we discussed earlier, systems with PoW algorithms already have been developed and tested, such as Dr. Adam Back's Hashcash \cite{hashcash}. 
 The underlying principle is to design a system that ensures the right order of transactions. 
 We know that transactions are grouped together into blocks and each block has a reference to previous one in a form of its hash. 
@@ -623,25 +628,34 @@ As an arguments, it accepts hashed block and a random number called nonce.
 Result of SHA256 is another 32 bit number. 
 This number should satisfy current bitcoin target by having certain number of leading zeros. 
 The only way to find such nonce for a specific block is by guessing and checking. 
+Figure \ref{fig:sha} illustrates it schematically.
 The first node that finds correct nonce broadcasts the block to the network. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.45\textwidth]{graphics/sha.png}
+  \caption{Guessing nonce using cryptographic hash function}
+  \label{fig:sha}
+\end{figure}
 
 The whole process of guessing the right nonce is called mining and nonce itself serves as a PoW. 
 This ensures that blocks are stored in order of their acceptance inside the network.
+
 It could take literally years to find a nonce for a single node, therefore miners form groups called mining pools.
 If one member of such pool solves nonce puzzle, the reward is shared between all its members. 
-Figure \ref{fig:pools} depicts how computational power of the network is distributed between the largest pools.
+Figure \ref{fig:pools} depicts how computational power of the network is distributed between the largest pools in 2019.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=.45\textwidth]{graphics/pools.png}
-  \caption[Caption]{Largest mining pools. Source: blockchain.com/pools}
+  \caption[Caption]{Largest mining pools in 2019. Source: blockchain.com/pools}
   \label{fig:pools}
 \end{figure}
 
 
 Since the number of nodes participating in a mining quite large average time to find a nonce is around ten minutes. 
 However, since 2008 computational power is increasing both in quality and quantity, so to keep mining time constant, difficulty level is adjusted after every 2016 blocks or approximately every two weeks. 
-If we take difficulty value in the beginning of Bitcoin as one, then by the end of February of 2019 it increased in six trillion times \cite{blockchain}.
+If we take difficulty value in the beginning of Bitcoin as one, then by the end of February 2019 it increased in six trillion times \cite{blockchain}.
 Figure \ref{fig:fig3} shows how difficulty has changed since the beginning.
 
 \begin{figure}[h]
@@ -661,7 +675,7 @@ Attentive reader may notice that above mentioned conflict resolution could be ex
 Here is an example: Alice sends transaction to Bob. 
 Bob waits few more blocks to make sure transaction is not dismissed, then ships the product.
 Meanwhile, Alice was creating her own version of blockchain, where she send Bob's transaction to herself. 
-If Alice is faster in mining new blocks than the rest of network, she can create a longer version of blockchain and announce it to the network, thus uncofirming previous blocks.
+If Alice is faster in mining new blocks than the rest of network, she can create a longer version of blockchain and announce it to the network, thus unconfirming previous blocks.
 Figure \ref{fig:fig4} illustrates this example.
 
 \begin{figure}[h]
@@ -678,10 +692,10 @@ It can be compared to a lottery.
 The chances of winning constantly by buying one ticket are close to zero. 
 The only way to do it is to have 51\% computational power of the whole network.
 It is known that several mining pools achieved this number for short periods of time, but quickly decreased the number of its members to keep the network stable.
-This method is called 51\% attack and the only incentive of actually launching such attack is to completely destroy the value of Bitcoin. 
+This method is called 51\% attack and the incentive of actually launching such attack could be to completely destroy the value of Bitcoin. 
 
 In addition, Alice also cannot just swap one particular block that is already part of a blockchain due to the fact that next block has a reference to it in a form of hash. 
-Thus even if one transaction is altered, the whole reference hash becomes invalid and we go back to racing issue.
+Thus even if one transaction is altered, the whole reference hash becomes invalid and we go back to the racing issue.
 
 \subsubsection{Transactions in Bitcoin}
 We know that Bitcoin in its simplest definition is a distributed database storing all transactions. 
@@ -779,7 +793,7 @@ There are multiple factors that could affect it, including regulatory pressure, 
 
 \subsubsection{Bitcoin Forks}
 Bitcoin network follows strict set of rules which has been examined in previous sections.
-However, Bitcoin is a piece of software and its source code is open-sourced [10], making it possible to change it. 
+However, Bitcoin is a piece of software and its source code is open-sourced \cite{core}, making it possible to change it. 
 Thus, it is not a surprise that there exist several implementations of Bitcoin that differ from each other in certain ways.
 The process of taking the original Bitcoin implementation and changing it is called forking. 
 There are two types of forks: hard forks and soft forks. 
@@ -823,7 +837,7 @@ Bitcoin uses blockchain as its underlying technology to distribute, update and v
 However, due to its nature it can be applied in different areas outside Bitcoin just by changing the contents of what is stored inside the ledger. 
 Cases where transparency, verification, trust and security are needed could benefit from adapting blockchain.
 
-In paper \cite{beyond} authors look into existing blockchain applications and give concrete examples of their usecases.
+In paper \cite{beyond} authors look into existing blockchain applications and give concrete examples of their use cases.
 In the beginning, blockchain applications are divided in two categories: financial and non-financial.
 
 In financial sector, one of the focuses is on allowing companies to sell their shares through blockchain directly to the public. 
@@ -841,7 +855,7 @@ Here is compiled list with some explanations:
     There are several companies who are already offering these services: Stampery, Viacoin, Block Notary, Ascribe and others.
     
     \item Music Industry - authors argue that public ledger inside blockchain could benefit music artists to ensure the rights and get their fair share of earnings. 
-    Authors do not list any specific companies, but webportal \cite{futurethinkers} names two startups in this space: Mycelia and Ujo Music.
+    Authors do not list any specific companies, but web portal \cite{futurethinkers} names two startups in this space: Mycelia and Ujo Music.
     
     \item Document storage - here blockchain can be used to securely store cryptographic fingerprint of any document and proof its existence at any moment. 
     Service with the same name is already operating online.
@@ -864,7 +878,7 @@ Here is compiled list with some explanations:
 \end{itemize}
 
 This list shows how widespread blockchain has become. 
-In addition to this, many technological startups are using blockchain in such areas as voting, cyber security, forecasting, transportation, charity, crowdfunding and many more \cite{futurethinkers}. 
+In addition to this, many technological startups are using blockchain in such areas as voting, cybersecurity, forecasting, transportation, charity, crowdfunding and many more \cite{futurethinkers}. 
 It is evident that blockchain is rapidly expanding its presence and challenging the status-quo in many industries. 
 
 However, there are several factors that could slow down blockchain adaptation \cite{beyond}.
@@ -873,12 +887,19 @@ It can be summarized as follow:
     \item Breaking the mental model of doing things in old-fashioned way;
     \item Regulatory obstacles depending on how laws are adapted in different countries;
     \item Established data models resulting in hard to implement migration strategies.
-    \item Novelty of technology in general public which opens the doors for bad actors.
+    \item Novelty of technology for the general public which opens the doors for bad actors.
     \item The possibility of advancement in computational power.
 \end{itemize}
 
 \section{Conclusion}
-The conclusion goes here.
+In this paper we discussed the history of digital currencies and how Bitcoin creation was a culmination of all the effort in this area. 
+We examined the exact ways in which Satoshi Nakamoto combined existing technologies to build a blockchain, which is powering foundation of whole Bitcoin network. 
+Then we looked into Bitcoin implementation and how it operates in a real world scenario.
+Finally, application of blockchain as a standalone technology was reviewed. 
+
+It is hard to predict the future of digital currencies, but Bitcoin being the first one will definitely leave the mark in a history books.
+On the other hand, blockchain could revolutionize many aspects of human life based on a number of companies investing their resources in exploring this still new technology. 
+
 
 
 
@@ -909,6 +930,7 @@ The conclusion goes here.
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
+\newpage
 \begin{thebibliography}{1}
 
 \bibitem{manifesto}
@@ -934,6 +956,9 @@ Schulze, Hendrik, and Klaus Mochalski. "Internet Study 2008/2009." Ipoque Report
 
 \bibitem{blockchain}
 blockchain.info/charts (Feb. 2019).
+
+\bibitem{core}
+https://github.com/bitcoin/bitcoin
 
 \bibitem{forks}
 forkdrop.io. How Many Bitcoin Forks Are There? forkdrop.io/how-many-bitcoin-forks-are-there (Feb. 2019).
