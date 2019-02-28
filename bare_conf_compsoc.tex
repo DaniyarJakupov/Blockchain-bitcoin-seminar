@@ -553,12 +553,12 @@ Because of that, creation of fully independent and distributed digital currency 
 However, after financial crisis in 2008 which caused millions of people around the world to loose their homes and jobs and additionally tanking major global economies such as USA and EU [5].
 As a consequence, interest in alternative ways of doing financial operations outside of traditional banking system was rekindled. 
 In addition, people already knew what kind of advantages digital currency could bring. Here are some examples:
-\begin{enumerate}
+\begin{itemize}
   \item Easy accounting and access. 
   \item International. 
   \item Cheap. 
   \item Internet ready
-\end{enumerate}
+\end{itemize}
 
 \subsection{Blockchain: blueprint for Bitcoin}
 Coincidentally, in October of 2008 someone releases a paper addressing this issue. 
@@ -580,11 +580,11 @@ There is no single definition for Bitcoin.
 But we can characterize it as a digital ledger that lists financial transactions and is distributed across blockchain network. 
 From original white paper we know how this network organized: 
 
-\begin{enumerate}
+\begin{itemize}
   \item Transactions are grouped together into blocks 
   \item Maximum number of transactions per block is ~2600. 
   \item New block is generated every ~10 minutes.
-\end{enumerate}
+\end{itemize}
 
 As it can be seen on Figure 1 each block is linked to previous block by using its hashed version. 
 
@@ -694,21 +694,59 @@ Figure 5 depicts transaction with multiple inputs and two outputs.
 \end{figure}
 
 As it has been already mentioned, each block contains several thousand transactions. 
-Visually it can be presented on Figure 1. 
+Visually it can be represented by Figure 1. 
+
 However, in reality Bitcoin network does something different. 
 In order to save space by not including the whole transaction body, but keep previous hash inside each block valid, all transaction are hashed in a tree structure called Merkle tree [9].
 It works by grouping transactions in pairs and hashing them until one single hash is obtained which is called merkle root. 
 If even one of the transactions is altered in any way after Merkle tree is constructed, merkle root will be completely different. 
 This root is included in each block.
-For better understanding, Figure 6 displays the Merkle tree
+So, Figure 1 can be adjusted to Figure 6
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.45\textwidth]{graphics/blocks_merkle.png}
+  \caption{Bitcoin blocks with merkle root}
+  \label{fig:fig6}
+\end{figure}
+
+Figure 7 displays how Merkle tree is constructed with four transactions.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=.45\textwidth]{graphics/merkle.png}
   \caption{Merkle Tree}
-  \label{fig:fig6}
+  \label{fig:fig7}
 \end{figure}
 
+\subsubsection{Bitcoin: creation and reward}
+It is not a secret that government is responsible for printing new money into the financial system. 
+At least, it is true for traditional fiat currencies.
+But Bitcoin is fundamentally different in a sense that there is no central authority.
+So how new bitcoins are created?
+The process of issuing new coins tied closely to mining mechanism. 
+In order to make nodes spend their computational resources on mining new blocks, network adds special transaction to a block. 
+This transaction is addressed to a node that successfully mined a block and contains a reward. 
+In other words, reward is way for a network to issue new coins into the system. 
+However, bitcoin is deflationary currency. 
+It means that there is finite number of bitcoins that will be created. 
+It is achieved by reducing reward in half roughly every four years. 
+Here is timeline showing how it works:
+
+\begin{itemize}
+    \item 01.2009 - 10.2012: 50 BTC
+    \item 10.2012 - 07.2016: 25 BTC
+    \item 07.2016 - 02.2020: 12.5 BTC (current reward)
+    \item 02.2020 - 09.2023: 6.25 BTC
+    \item ...
+\end{itemize}
+
+It is calculated that in total there will be no more that twenty one million of bitcoins. 
+Possibly even less, due to the fact that if private key for the wallet is lost, all associated bitcoins are also gone forever. 
+
+But what will be incentive for miners to keep working after reward is really small or equals to zero? 
+Well, it is known that each transaction can have at most two outputs: one for recipient, one for returning the change. 
+But if second output is not specified and input value is greater than output, then the difference is counted as a transaction fee and it goes to the block miner.
 
 
 \section{Conclusion}
