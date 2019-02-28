@@ -748,6 +748,47 @@ But what will be incentive for miners to keep working after reward is really sma
 Well, it is known that each transaction can have at most two outputs: one for recipient, one for returning the change. 
 But if second output is not specified and input value is greater than output, then the difference is counted as a transaction fee and it goes to the block miner.
 
+\subsubsection{Bitcoin forks}
+Bitcoin network follows strict set of rules which has been examined in previous sections.
+However, Bitcoin is a piece of software and its source code is open-sourced [10], making it possible to change it. 
+Thus, it is not a surprise that there exist several implementations of Bitcoin that differ from each other in certain ways.
+The process of taking the original Bitcoin implementation and changing it is called forking. 
+There are two types of forks: hard forks and soft forks. 
+If fork backwards compatible with original Bitcoin, meaning that blocks mined can be accepted in original Bitcoin network, then such fork is called soft fork. 
+Hard fork is not compatible with original Bitcoin. 
+The most popular hard changes to Bitcoin are following:
+
+\begin{itemize}
+    \item Increasing block size limit, allowing more transactions per block;
+    \item Adjusting PoW algorithm for different hardware;
+    \item Making changes to reward mechanism affecting coin supply.
+\end{itemize}
+
+In order to fork bitcoin, group of users decide from what point in a blockchain new set of rules will be applied. 
+Usually after that, anyone can start using new currency with the same private key. 
+All funds are transferred to the new network, however the value of course is not the same. 
+The forking process is illustrated on Figure 8.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.45\textwidth]{graphics/fork.png}
+  \caption{Hard Fork}
+  \label{fig:fig8}
+\end{figure}
+
+Forking of Bitcoin is quite controversial. 
+Majority of forks do not establish themselves on a market. 
+It is counted that there has been more than hundred fork projects [11].
+Figure 9 depicts most prominent Bitcoin hard forks. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.45\textwidth]{graphics/timeline.png}
+  \caption{Forks Timeline}
+  \label{fig:fig9}
+\end{figure}
+
+
 
 \section{Conclusion}
 The conclusion goes here.
