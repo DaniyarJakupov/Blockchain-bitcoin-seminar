@@ -679,6 +679,35 @@ But the only incentive of actually launching such attack is to completely destro
 In addition, Alice also cannot just swap one particular block that is already part of a blockchain due to the fact that next block has a reference to it in a form of hash. 
 Thus even if one transaction is altered, the whole reference hash becomes invalid and we go back to racing issue.
 
+\subsubsection{Transactions in Bitcoin}
+We know that Bitcoin in its simplest definition is a distributed database storing all transactions. 
+Transaction consist of at least one input and at most two outputs.
+Inputs are needed to reference previous transactions where the sender is recipient and outputs are for specifying public address of a new recipient and for returning the change if needed.
+The network will check whether input transactions have been used already, thus verifying that sender has enough funds.
+Figure 5 depicts transaction with multiple inputs and two outputs.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.45\textwidth]{graphics/tx.png}
+  \caption{Transaction}
+  \label{fig:fig5}
+\end{figure}
+
+As it has been already mentioned, each block contains several thousand transactions. 
+Visually it can be presented on Figure 1. 
+However, in reality Bitcoin network does something different. 
+In order to save space by not including the whole transaction body, but keep previous hash inside each block valid, all transaction are hashed in a tree structure called Merkle tree [9].
+It works by grouping transactions in pairs and hashing them until one single hash is obtained which is called merkle root. 
+If even one of the transactions is altered in any way after Merkle tree is constructed, merkle root will be completely different. 
+This root is included in each block.
+For better understanding, Figure 6 displays the Merkle tree
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.45\textwidth]{graphics/merkle.png}
+  \caption{Merkle Tree}
+  \label{fig:fig6}
+\end{figure}
 
 
 
